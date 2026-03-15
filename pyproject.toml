@@ -1,0 +1,23 @@
+[project]
+name = "coffee_helper"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "sm1rdev",email = "smirvanek@gmail.com"}
+]
+requires-python = ">=3.10"
+
+[tool.poetry]
+packages = [
+    { include = "coffee_helper", from = "src" }
+]
+
+[tool.poetry.dependencies]
+tabulate = "^0.10.0"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^9.0.2"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
