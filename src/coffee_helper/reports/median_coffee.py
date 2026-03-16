@@ -6,9 +6,29 @@ from coffee_helper.reports.base import BaseReport
 
 
 class MedianCoffeeSpentReport(BaseReport):
+    """
+    Report that calculates the median coffee spending per student.
+
+    Attributes:
+        name (str): Report name used in the REPORTS registry.
+    """
+
     name = "median-coffee"
 
     def generate(self, rows: list[dict]) -> tuple[str, list]:
+        """
+        Calculates the median coffee spending for each student
+        and sorts students by descending spending.
+
+        Args:
+            rows (list[dict]): CSV data with 'student' and 'coffee_spent' fields.
+
+        Returns:
+            tuple[str, list]: 
+                - Formatted table string for console output
+                - List of [student, median_coffee] pairs for testing
+        """
+
         students: dict[str, list] = defaultdict(list)
 
         for row in rows:
