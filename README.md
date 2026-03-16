@@ -38,5 +38,6 @@ Run the script with one or more CSV files:
 
 ## Tests
 
-Run pytest in the project root.
-Coverage can be checked with pytest --cov=coffee_helper.
+Run `pytest` in the project root.
+
+Coverage can be checked with `pytest --cov=coffee_helper`.
