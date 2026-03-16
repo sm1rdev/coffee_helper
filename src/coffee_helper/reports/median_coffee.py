@@ -8,7 +8,7 @@ from coffee_helper.reports.base import BaseReport
 class MedianCoffeeSpentReport(BaseReport):
     name = "median-coffee"
 
-    def generate(self, rows: list[dict]) -> None:
+    def generate(self, rows: list[dict]) -> str:
         students: dict[str, list] = defaultdict(list)
 
         for row in rows:
@@ -21,12 +21,10 @@ class MedianCoffeeSpentReport(BaseReport):
 
         result.sort(key=lambda x: x[1], reverse=True)
 
-        print(
-            tabulate(
-                result,
-                headers=[
-                    "student", "median_coffee"
-                ],
-                tablefmt="grid"
-            )
+        return tabulate(
+            result,
+            headers=[
+                "student", "median_coffee"
+            ],
+            tablefmt="grid"
         )
