@@ -3,5 +3,5 @@ from abc import ABC, abstractmethod
 
 class BaseReport(ABC):
     @abstractmethod
-    def generate(self, rows: list[dict]) -> str:
+    def generate(self, rows: list[dict]) -> tuple[str, list]:
         pass

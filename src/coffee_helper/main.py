@@ -17,9 +17,9 @@ def main() -> None:
 
     report: BaseReport = REPORTS[args.report]
 
-    data = report.generate(rows)
+    result_str, result_data = report.generate(rows)
 
-    print(data)
+    print(result_str)
 
 
 if __name__ == "__main__":
